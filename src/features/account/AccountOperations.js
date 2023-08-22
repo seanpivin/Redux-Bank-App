@@ -13,9 +13,12 @@ function AccountOperations() {
   const distpatch = useDispatch();
   const {
     loan: currentLoan,
-    loanPurpose: currentLoanPurp,
+    loanPurpose: currentLoanPurpose,
     balance,
   } = useSelector((store) => store.account);
+
+  console.log(currentLoan);
+  console.log(balance);
 
   function handleDeposit() {
     if (!depositAmount) return;
@@ -91,10 +94,10 @@ function AccountOperations() {
           />
           <button onClick={handleRequestLoan}>Request loan</button>
         </div>
-        {currentLoan === 0 && (
+        {currentLoan > 0 && (
           <div>
             <span>
-              Pay back ${currentLoan}({currentLoanPurp})
+              Pay back ${currentLoan}({currentLoanPurpose})
             </span>
             <button onClick={handlePayLoan}>Pay loan</button>
           </div>
