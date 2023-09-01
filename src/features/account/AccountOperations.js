@@ -25,7 +25,7 @@ function AccountOperations() {
     if (!depositAmount) return;
     distpatch(deposit(depositAmount, currency));
     setDepositAmount("");
-    setCurrency("");
+    setCurrency("USD");
   }
 
   function handleWithdrawal() {
